@@ -38,8 +38,7 @@ From the **Filament admin panel**, administrators can:
 ### **Portal**  
 - **Laravel 11.x**  
 - **Vue 3.x**  
-- **Vue I18n**: Multi-language support  
-- **Vue Router**: Client-side routing  
+- **Vue I18n**: Multi-language support   
 - **Axios**: API requests  
 - **Pinia**: State management  
 - **Vuetify.js**: UI component library  
