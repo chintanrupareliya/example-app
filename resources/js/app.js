@@ -1,13 +1,29 @@
 import '../css/app.css';
 import './bootstrap';
+import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
+import '@mdi/font/css/materialdesignicons.css';
+
 import router from './router';
 import i18n from './plugins/i18n';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+
+// Create Vuetify instance
+const vuetify = createVuetify({
+    components,
+    directives,
+    icons: {
+        defaultSet: 'mdi',
+    },
+});
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -20,6 +36,7 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(vuetify) // Use the Vuetify instance
             .use(router)
             .use(i18n)
             .mount(el);
