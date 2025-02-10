@@ -38,9 +38,10 @@ From the **Filament admin panel**, administrators can:
 ### **Portal**  
 - **Laravel 11.x**  
 - **Vue 3.x**  
-- **Vue I18n**: Multi-language support   
 - **Axios**: API requests  
 - **Pinia**: State management  
+- **Vue I18n**: Multi-language support instead of laravel version 
+- **Vue router**: to replace router of laravel 
 - **Vuetify.js**: UI component library  
   - **Removed TailwindCSS** and replaced with Vuetify (using SASS)  
 
