@@ -25,11 +25,14 @@ function handleImageError() {
     document.getElementById('background')?.classList.add('!hidden');
 }
 </script>
-
-
+ 
 
 <template>
     <Head title="Welcome" />
+    <VTextarea variant="outlined" label="Outlined"/>
+    <VIcon>mdi-watch</VIcon>
+ 
+
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
        
         <div
@@ -39,6 +42,16 @@ function handleImageError() {
                 <header
                     class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"
                 >
+                
+
+
+                <div class="  flex flex-1 justify-start">
+                    <Link :href="route('about')" class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                            about
+                        </Link>
+                    </div>
+
+
                     <div class="flex lg:col-start-2 lg:justify-center">
                         <svg
                             class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]"
@@ -52,8 +65,15 @@ function handleImageError() {
                             />
                         </svg>
                     </div>
+                    
+      
+                
+
+
                     <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
-                        <Link
+                     
+                            
+                            <Link
                             v-if="$page.props.auth.user"
                             :href="route('dashboard')"
                             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
